@@ -91,6 +91,7 @@ class TrackingProtectionFragment : PreferenceFragmentCompat() {
         val keyStrict = getString(R.string.pref_key_tracking_protection_strict)
         radioStrict = requireNotNull(findPreference(keyStrict))
         radioStrict.isVisible = FeatureFlags.etpCategories
+        radioStrict.contentDescription = getString(R.string.preference_enhanced_tracking_protection_strict_info_button)
         radioStrict.onPreferenceChangeListener = object : SharedPreferenceUpdater() {
             override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
                 if (newValue == true) {
@@ -117,6 +118,7 @@ class TrackingProtectionFragment : PreferenceFragmentCompat() {
         val keyStandard = getString(R.string.pref_key_tracking_protection_standard)
         radioStandard = requireNotNull(findPreference(keyStandard))
         radioStandard.isVisible = FeatureFlags.etpCategories
+        radioStandard.contentDescription = getString(R.string.preference_enhanced_tracking_protection_standard_info_button)
         radioStandard.onPreferenceChangeListener = object : SharedPreferenceUpdater() {
             override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
                 if (newValue == true) {
